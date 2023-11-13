@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mark Vakulenko's Profile</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Mark Vakulenko</h1>
+            <img src="picture.jpg" alt="Mark Vakulenko's Profile Picture">
+            <p>Email: <a href="mailto:mark.mvak@gmail.com"><b>mark.mvak@gmail.com</b></a></p>
+            <p>Phone: <a href="tel:+123456789">+123456789</a></p>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="card about">
+                <h2>About Me</h2>
+                <p>Hello there! I'm Mark. On the way to becoming a full-stack "unicorn". With a background in computer science and computer engineering, I'm currently sharpening my data science skills through a pre-master's program. What makes my journey exceptional is my enthusiasm for blockchain technologies. I believe that combining data science with blockchain holds immense potential for innovation.</p>
+                <p>GPA: 3.8</p>
+            </div>
+
+            <div class="card interests">
+                <h2>Interests</h2>
+                <ul>
+                    <li>🚀 Building Digital Realities</li>
+                    <li>🔍 Techno-Explorer</li>
+                    <li>🔧 Full-stack Development</li>
+                    <li>📊 Data Science</li>
+                    <li>⛓️ Blockchain Technologies</li>
+                    <li>💡 Innovation and Technology</li>
+                    <li>💻 Computer Science</li>
+                    <li>🛠️ Computer Engineering</li>
+                    <li>🎓 Pre-master's Program</li>
+                    <li>🌐 Technology Enthusiast</li>
+                    <li>🔄 Integrated Data and Blockchain</li>
+                    <li>🚀 Innovation in Blockchain Integration</li>
+                    <li>📸 Capturing Moments with Pixels</li>
+                </ul>
+            </div>
+
+            <div class="education-card">
+                <h2>Bachelor's</h2>
+                    <p>Field: Computer Science<p>
+                    <p> and Computer Engineering</p>
+                    <p>Institution: MISIS University</p>
+                    <p>Year: 2019-2023</p>
+                <h2>Pre-Masters</h2>
+                    <p>Field: Data Science</p>
+                    <p>Institution: <p>
+                    <p>INTO Drew University</p>
+                    <p>Year: 2023-Present</p>
+            </div>
+
+            <div class="card my-projects">
+                <h2>My Projects</h2>
+                <div class="project">
+                    <h3>Design and development of a cryptocurrency mining device for blockchain applications; analyzing the impact on the environment and on the global economy</h3>
+                    <p>Within the framework of the bachelor's thesis the problem of designing and development of a device for realization of blockchain technology, including the design and development of an interactive 3D virtual tour.</p>
+                    <a href="Bachelor_thesis_VakulenkoMM.pptx">View Presentation</a>
+                </div>
+                <div class="project">
+                    <h3>ReWeather</h3>
+                    <p>ReWeather - Android app which sends notifications on how to dress better in term of health today!</p>
+                    <a href="https://github.com/MarkmVak/ReWeather">GitHub Repo</a>
+                </div>
+            </div>
+        </div>
+            <canvas id="particleCanvas"></canvas>
+    </main>
+
+    <script>
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        function createParticle() {
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 10 + 1,
+                color: `hsl(${Math.random() * 360}, 50%, 50%)`,
+                speed: Math.random() * 3 + 1,
+                angle: Math.random() * Math.PI * 2
+            };
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 10);
+                ctx.fillStyle = p.color;
+                ctx.fill();
+
+                p.x += Math.cos(p.angle) * p.speed;
+                p.y += Math.sin(p.angle) * p.speed;
+
+                if (p.x < 0 || p.x > canvas.width || p.y < 0 || p.y > canvas.height) {
+                    particles[i] = createParticle();
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        resizeCanvas();
+
+        for (let i = 0; i < 100; i++) {
+            particles.push(createParticle());
+        }
+
+        animate();
+    </script>
+
+<!--     <script>
+        const canvas = document.getElementById('hypnoticCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        function animate() {
+            const centerX = width / 2;
+            const centerY = height / 2;
+            const radius = Math.min(width, height) * 0.4;
+
+            ctx.clearRect(0, 0, width, height);
+
+            for (let angle = 0; angle < Math.PI * 2; angle += 0.1) {
+                const x = centerX + Math.cos(angle) * radius * Math.sin(Date.now() * 0.001);
+                const y = centerY + Math.sin(angle) * radius * Math.sin(Date.now() * 0.001);
+
+                ctx.beginPath();
+                ctx.arc(x, y, 3, 0, Math.PI * 2);
+                ctx.fillStyle = `hsl(${angle * 50}, 80%, 60%)`;
+                ctx.fill();
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        resizeCanvas();
+        animate();
+    </script> -->
+</body>
+</html>

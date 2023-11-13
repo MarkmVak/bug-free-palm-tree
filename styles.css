@@ -1,0 +1,133 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333; 
+}
+
+canvas {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+header {
+    background-color: #88aaff;  
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.header-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 10px 0 5px;
+}
+
+h2 {
+    color: #4455aa;
+    border-bottom: 2px solid #4455aa;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+ul li:hover {
+    transform: scale(1.05);
+    background-color: #ddeeff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.education-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+ .about p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.card a {
+    display: block;
+    margin-top: 15px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px;
+    color: #fff;
+}
+.header-content h1 {
+    margin: 0;
+}
+.header-content img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 10%;
+}
+
+.card.interests {
+    background-color: #f0f0f0; /* Lighter Background for Interests */
+    color: #333; /* Dark Text Color */
+    padding: 20px;
+}
+
+.card.interests ul li {
+    background-color: #e0e0e0; /* Slightly Darker Background for Interest List Items */
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    color: #333; /* Dark Text Color */
+}
